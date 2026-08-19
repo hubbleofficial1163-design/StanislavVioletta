@@ -2,523 +2,404 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Свадьба Тимура и Натальи</title>
-    
-    <!-- Подключение шрифтов Google Fonts -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Станислав & Виолетта | Приглашение</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;1,400&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Caveat:wght@400;500;600;700&family=Marck+Script&family=Tangerine:wght@400;700&family=Great+Vibes&family=Allura&display=swap" rel="stylesheet">
+    <!-- Добавьте эти строки после существующих подключений шрифтов -->
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@300;400;500;600;700&family=Tangerine:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 <body>
+    <section class="hero">
+        <img src="11.JPG" alt="Фон свадьбы" class="hero-background">
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-names">
+            <h1>Станислав <span class="amp">&</span> Виолетта</h1>
+        </div>
 
-    <!-- ZERO БЛОК -->
-<!-- ZERO БЛОК (только для показа фото, без музыки) -->
-<div id="zero-block">
-    <img src="zero.jpg" alt="Нажмите для запуска">
-    <div class="zero-overlay">
-        <span class="zero-tap-text">Мы ждем Вас...</span>
-    </div>
-</div>
+            <!-- ===== КНОПКА МУЗЫКИ ===== -->
+    <button class="music-btn" id="musicToggle">
+        <svg class="music-icon" viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor" d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+        </svg>
+        <span id="musicStatus">Включить музыку</span>
+    </button>
 
-    <!-- СЕКЦИЯ 1: Главная (Hero) -->
-    <section class="section hero-section">
+        <div class="ticker-container">
+            <div class="ticker-content" id="tickerText">приглашение на свадьбу</div>
+        </div>
+    </section>
+
+    <!-- Новая секция (вставьте после hero секции) -->
+<!-- Обновленная секция с измененной структурой календаря -->
+    <section class="invitation-section">
         <div class="container">
-            <header class="header">
-                <h1 class="title-wedding">WEDDING</h1>
-                <div class="date-wrapper">
-                    <span class="date">24.09.2026</span>
-                    <!-- <span class="day">day</span> -->
-                </div>
-            </header>
+            <h2 class="section-title">
+                <span class="capital-d">Д</span>орогие наши родные и любимые!
+            </h2>
+            
+            <p class="section-text">
+                Любовь - это путешествие, и мы рады, что Вы часть нашего путешествия в семейную жизнь
+            </p>
 
-            <div class="photo-section">
-                <div class="photo-frame">
-                    <img src="hero2.jpg" alt="Максим и Екатерина" class="hero-image">
+            <!-- Календарь (ограничен по ширине) -->
+            <div class="calendar-wrapper">
+                <div class="calendar">
+                    <div class="calendar-month">Ноябрь</div>
+                    
+                    <div class="calendar-content">
+                        <div class="calendar-weekdays">
+                            <span>пн</span>
+                            <span>вт</span>
+                            <span>ср</span>
+                            <span>чт</span>
+                            <span>пт</span>
+                            <span>сб</span>
+                            <span>вс</span>
+                        </div>
+                        
+                        <div class="calendar-dates">
+                            <span>23</span>
+                            <span>24</span>
+                            <span>25</span>
+                            <span>26</span>
+                            <span>27</span>
+                            <span>28</span>
+                            <span>29</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <footer class="names-section">
-                <h2 class="name">Тимур</h2>
-                <h2 class="name">Наталья</h2>
-            </footer>
+            <!-- Фото на всю ширину -->
+            <div class="full-width-photo">
+                <img src="loc2.JPG" alt="Фото" class="couple-photo">
+            </div>
+
+            <!-- Блок локации с фоном на всю ширину -->
+            <div class="location-block full-width" style="background-image: url('fon3.png');">
+            <div class="location-content">
+                    <h3 class="location-title">Локация</h3>
+                    <p class="location-text">г. Тверь, улица Двор Пролетарки, 16 (вход через белый лофт)</p>
+                </div>
+            </div>
+
+            <!-- Карта на всю ширину (без фона, отдельно) -->
+            <div class="full-width-map">
+                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ab459334abe002e2704167a5ddaa31fcb82df8f22a7ebb70529767d87237aa260&amp;source=constructor" 
+                        width="100%" 
+                        height="400" 
+                        frameborder="0"
+                        style="border:0; display: block;"
+                        allowfullscreen>
+                </iframe>
+            </div>
         </div>
     </section>
 
-    <!-- СЕКЦИЯ 2: Приветствие + Календарь -->
-<section class="section welcome-section">
-    <div class="welcome-wrapper">
-        
-        <!-- Приветственный текст -->
-        <div class="welcome-text">
-            <p>
-                Дорогие родные и близкие,<br>
-                приглашаем Вас на день рождения<br>
-                нашей семьи.
-            </p>
-            <p class="welcome-sub">
-                Мы будем очень рады разделить этот<br>
-                важный день с Вами!
-            </p>
-        </div>
-
-        <!-- Кнопка включения музыки -->
-        <div class="music-btn-wrapper">
-            <button id="musicToggleBtn" class="music-toggle-btn">♪ Включить музыку</button>
-        </div>
-
-        <!-- Календарь -->
-        <div class="welcome-calendar">
-            <div class="calendar-header">
-                <span class="calendar-month">Сентябрь</span>
-                <span class="calendar-year">2026</span>
-            </div>
+    <!-- Секция программы дня -->
+    <!-- Секция программы дня -->
+    <section class="schedule-section">
+        <div class="container">
+            <h2 class="section-title schedule-title">Программа дня</h2>
             
-            <div class="calendar-grid">
-                <!-- Дни недели -->
-                <div class="calendar-weekday">Пн</div>
-                <div class="calendar-weekday">Вт</div>
-                <div class="calendar-weekday">Ср</div>
-                <div class="calendar-weekday">Чт</div>
-                <div class="calendar-weekday">Пт</div>
-                <div class="calendar-weekday">Сб</div>
-                <div class="calendar-weekday">Вс</div>
+            <div class="schedule-timeline">
+                <!-- Элемент 1: Сбор гостей -->
+                <div class="timeline-item">
+                    <div class="timeline-left">
+                        <span class="event-name">Сбор гостей</span>
+                    </div>
+                    <div class="timeline-line"></div>
+                    <div class="timeline-right">
+                        <span class="event-time">14:00</span>
+                    </div>
+                </div>
                 
-                <!-- Пустые ячейки (1 сентября 2026 - вторник) -->
-                <div class="calendar-empty"></div>
-                <div class="calendar-day">1</div>
-                <div class="calendar-day">2</div>
-                <div class="calendar-day">3</div>
-                <div class="calendar-day">4</div>
-                <div class="calendar-day">5</div>
-                <div class="calendar-day">6</div>
+                <!-- Элемент 2: Фуршет -->
+                <div class="timeline-item">
+                    <div class="timeline-left">
+                        <span class="event-name">Фуршет</span>
+                    </div>
+                    <div class="timeline-line"></div>
+                    <div class="timeline-right">
+                        <span class="event-time">14:00-14:40</span>
+                    </div>
+                </div>
                 
-                <div class="calendar-day">7</div>
-                <div class="calendar-day">8</div>
-                <div class="calendar-day">9</div>
-                <div class="calendar-day">10</div>
-                <div class="calendar-day">11</div>
-                <div class="calendar-day">12</div>
-                <div class="calendar-day">13</div>
+                <!-- Элемент 3: Церемония -->
+                <div class="timeline-item">
+                    <div class="timeline-left">
+                        <span class="event-name">Церемония</span>
+                    </div>
+                    <div class="timeline-line"></div>
+                    <div class="timeline-right">
+                        <span class="event-time">14:40-15:40</span>
+                    </div>
+                </div>
                 
-                <div class="calendar-day">14</div>
-                <div class="calendar-day">15</div>
-                <div class="calendar-day">16</div>
-                <div class="calendar-day">17</div>
-                <div class="calendar-day">18</div>
-                <div class="calendar-day">19</div>
-                <div class="calendar-day">20</div>
+                <!-- Элемент 4: Банкет -->
+                <div class="timeline-item">
+                    <div class="timeline-left">
+                        <span class="event-name">Банкет</span>
+                    </div>
+                    <div class="timeline-line"></div>
+                    <div class="timeline-right">
+                        <span class="event-time">16:00</span>
+                    </div>
+                </div>
                 
-                <div class="calendar-day">21</div>
-                <div class="calendar-day">22</div>
-                <div class="calendar-day">23</div>
-                <div class="calendar-day calendar-highlight">24</div>
-                <div class="calendar-day">25</div>
-                <div class="calendar-day">26</div>
-                <div class="calendar-day">27</div>
-                
-                <div class="calendar-day">28</div>
-                <div class="calendar-day">29</div>
-                <div class="calendar-day">30</div>
-            </div>
-            
-            <div class="calendar-footer">
-                <span class="calendar-heart">❤</span>
-                <span class="calendar-label">24 сентября 2026</span>
-                <span class="calendar-heart">❤</span>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-    <!-- СЕКЦИЯ 2: Место проведения -->
-       <!-- СЕКЦИЯ 2: Место проведения (НОВЫЙ СТИЛЬ) -->
-    <section class="section new-location-section">
-        <div class="new-location-wrapper">
-            
-            <!-- ФОНОВОЕ ФОТО -->
-            <div class="location-bg">
-                <img src="loc2.jpg" alt="Фон локации" class="location-bg-img">
-            </div>
-
-            <!-- БЕЛАЯ КАРТОЧКА ПО ЦЕНТРУ -->
-            <div class="location-card">
-                <h2 class="loc-new-title">ЛОКАЦИЯ</h2>
-                
-                <div class="loc-new-address">
-                    Миллениум Парк<br>
-                    Площадка «Панорама»
+                <!-- Элемент 5: Торт -->
+                <div class="timeline-item">
+                    <div class="timeline-left">
+                        <span class="event-name">Торт</span>
+                    </div>
+                    <div class="timeline-line"></div>
+                    <div class="timeline-right">
+                        <span class="event-time">21:00</span>
+                    </div>
                 </div>
 
-                <div class="loc-new-divider"></div>
+                <!-- Элемент 6: конец -->
+                <div class="timeline-item">
+                    <div class="timeline-left">
+                        <span class="event-name">Окончание вечера</span>
+                    </div>
+                    <div class="timeline-line"></div>
+                    <div class="timeline-right">
+                        <span class="event-time">00:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="loc-new-text">
-                    <p class="loc-new-greeting">Адрес</p>
-                    <p class="loc-new-desc">
-                        Г. Уфа, Новгородская ул., 58/1<br>
+
+    <!-- Секция дресс-кода -->
+    <section class="dresscode-section" style="background-image: url('fon3.png');">
+        <div class="container">
+            <h2 class="section-title dresscode-title">Дресс-код</h2>
+            
+            <p class="dresscode-text">
+            Мы будем особенно рады, если в ваших образах появятся оттенки нашей свадебной палитры
+            Но, пожалуйста, не воспринимайте это как обязательное правило - нам гораздо важнее видеть вас рядом и разделить с вами этот день 
+            </p>
+            
+            <img src="dress2.png" alt="Палитра дресс-кода" class="dresscode-palette">
+
+            <!-- Новый блок -->
+            <!-- <p class="inspiration-text">Вдохновляйтесь нарядами</p>
+            
+            <div class="dresscode-gallery">
+            <div class="gallery-container">
+                    <div class="gallery-track" id="galleryTrack">
+                        <div class="gallery-slide">
+                            <img src="dress2.JPG" alt="Пример наряда 1" class="dresscode-inspiration">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="dress3.JPG" alt="Пример наряда 2" class="dresscode-inspiration">
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <button class="gallery-btn prev" id="galleryPrev" aria-label="Предыдущее фото">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                    </svg>
+                </button>
+                
+                
+                <button class="gallery-btn next" id="galleryNext" aria-label="Следующее фото">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                    </svg>
+                </button>
+            </div> -->
+    </section>
+
+        <!-- Секция анкеты гостя -->
+    <section class="guest-section">
+        <div class="container">
+            <div class="guest-card">
+                <h2 class="section-title guest-title">Анкета гостя</h2>
+                    <span style="display: block; font-size: 1.2rem; color: #595b4e;margin-top: -30px; margin-bottom: 10px;">
+                        Пожалуйста, ответьте до 12 октября 2026
+                    </span>
+                <form class="guest-form">
+                    <!-- Поле Фамилия Имя -->
+                    <div class="form-group">
+                        <label for="name" class="form-label">Фамилия, имя</label>
+                        
+                        <input type="text" id="name" name="name" class="form-input" placeholder=" ">
+                    </div>
+                    
+                    <!-- Подтверждение присутствия (в столбик) -->
+                    <div class="form-group">
+                        <label class="form-label">Подтверждение присутствия</label>
+                        <div class="radio-group-vertical">
+                            <label class="radio-label">
+                                <input type="radio" name="attendance" value="yes" class="radio-input">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Буду</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="attendance" value="no" class="radio-input">
+                                <span class="radio-custom"></span>
+                                <span class="radio-text">Не смогу</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Предпочтения по алкоголю -->
+                    <div class="form-group">
+                        <label class="form-label">Предпочтения по алкоголю</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="alcohol" value="wine" class="checkbox-input">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-text">Белое вино</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="alcohol" value="champagne" class="checkbox-input">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-text">Красное вино</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="alcohol" value="whiskey" class="checkbox-input">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-text">Шампанское</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="alcohol" value="vodka" class="checkbox-input">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-text">Водка</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="alcohol" value="cocktails" class="checkbox-input">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-text">Коньяк</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="alcohol" value="Visky" class="checkbox-input">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-text">Виски</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="alcohol" value="none" class="checkbox-input">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-text">Не пью алкоголь</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Кнопка отправки -->
+                    <div class="form-group submit-group">
+                        <button type="submit" class="submit-btn">Отправить</button>
+                    </div>
+                </form>
+
+                                <div class="form-group telegram-group">
+                    <label class="form-label">Общий чат</label>
+                    <p class="telegram-text">
+                        Присоединяйтесь к нашему общему чату в Telegram, чтобы быть в курсе всех новостей и обсуждать детали свадьбы с другими гостями!
                     </p>
+                    <a href="https://t.me/+iJGLHFQB904wOWVi" class="telegram-button" target="_blank">
+                        <svg class="telegram-icon" viewBox="0 0 24 24" width="20" height="20">
+                            <path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-1.787 8.435c-.132.586-.479.732-.971.456l-2.68-1.976-1.293 1.244c-.143.143-.263.263-.539.263l.193-2.71 4.934-4.457c.215-.191-.047-.3-.334-.109l-6.097 3.84-2.627-.877c-.571-.179-.582-.571.119-.845l10.26-3.956c.475-.175.891.117.736.832z"/>
+                        </svg>
+                        Перейти в Telegram-чат
+                    </a>
                 </div>
-
-                <a href="https://yandex.ru/maps/org/millenium_park/245667275509?si=wuqmpah7vpg6d3tmgqt5pyv43g" target="_blank" class="loc-new-btn">перейти к карте</a> <br> <br>
-
-                <p class="loc-new-desc">
-                    Подъезжайте к автомобильной парковке<br>
-                </p>
             </div>
-
-            <!-- ТЕКСТ ВНИЗУ НА ФОНЕ ФОТО -->
-            <!-- <div class="loc-bottom-text">
-                <div class="loc-bottom-title">СБОР ГОСТЕЙ</div>
-                <div class="loc-bottom-time">13:30</div>
-            </div> -->
-
         </div>
     </section>
-
-
-        <!-- СЕКЦИЯ 3: Тайминг -->
-        <!-- СЕКЦИЯ 3: Тайминг -->
-    <section class="section timeline-section">
-        <div class="timeline-wrapper">
+<!-- Секция пожеланий -->
+<section class="wishes-section" style="background-image: url('fon3.png');">
+    <div class="container">
+        <h2 class="section-title wishes-title">Пожелания</h2>
+        
+        <div class="wishes-content">
+            <p class="wishes-text">
+                Дорогие наши друзья и близкие!
+            </p>
+            <p class="wishes-text">
+                Самый желанный подарок для нас - это ваше присутствие и хорошее настроение. <br> Если вы думаете, что подарить нам, будем рады денежному подарку в конверте. Так мы сможем сами выбрать то, что действительно хочется, и сохранить ваши подарки в наших будущих мечтах и путешествиях. <BR> <BR> Цветы всегда хочется сохранить подольше, особенно цветы с такого важного дня.
+Поэтому мы решили немного продлить им жизнь и оформить цветочную подписку — каждую неделю к нам будут приезжать новые букеты, и свадебное настроение ещё долго будет жить у нас дома.
+            </p>
+            <p class="wishes-text">
+                Если вам захочется стать частью этой идеи и поддержать нашу цветочную историю, мы будем очень рады. Для нас это будет особенно тёплым продолжением нашего свадебного дня 
+            </p>
             
-            <!-- Заголовок -->
-            <header class="timeline-header">
-                <h2 class="timeline-title">ТАЙМИНГ</h2>
-                <span class="timeline-subtitle">дня</span>
-            </header>
-
-            <!-- Пункт 1: Сбор гостей -->
-            <div class="timeline-item">
-                <div class="timeline-icon">
-                    <img src="1.png" alt="Сбор гостей">
-                </div>
-                <div class="timeline-time">15:00 - 16:00</div>
-                <div class="timeline-event">Сбор гостей</div>
-                <div class="timeline-desc">Встречаемся, делимся эмоциями, настраиваемся на праздник</div>
-            </div>
-
-            <!-- Пункт 2: Церемония -->
-            <div class="timeline-item">
-                <div class="timeline-icon">
-                    <img src="2.png" alt="Церемония">
-                </div>
-                <div class="timeline-time">16:00 - 17:00</div>
-                <div class="timeline-event">Церемония</div>
-                <div class="timeline-desc">Самый трогательный момент нашей свадьбы</div>
-            </div>
-
-            <!-- Пункт 3: Банкет -->
-            <div class="timeline-item">
-                <div class="timeline-icon">
-                    <img src="3.png" alt="Банкет">
-                </div>
-                <div class="timeline-time">17:00 - 22:00</div>
-                <div class="timeline-event">Банкет</div>
-                <div class="timeline-desc">Поздравления, тосты, радостные эмоции и кое-что еще...</div>
-            </div>
-
-            <!-- Пункт 4: Торт -->
-            <div class="timeline-item">
-                <div class="timeline-icon">
-                    <img src="4.png" alt="Торт">
-                </div>
-                <div class="timeline-time">22:00 - 23:00</div>
-                <div class="timeline-event">Дискотека</div>
-                <div class="timeline-desc">Танцы и веселье</div>
-            </div>
-
-            <!-- Пункт 5: Окончание -->
-            <!-- <div class="timeline-item">
-                <div class="timeline-icon">
-                    <img src="5.png" alt="Окончание">
-                </div>
-                <div class="timeline-time">21:30</div>
-                <div class="timeline-event">Окончание вечера</div>
-                <div class="timeline-desc">К сожалению, даже такие<br>радостные дни заканчиваются</div>
-            </div> -->
-
-        </div>
-    </section>
-
-
-
-<!-- СЕКЦИЯ 4: Дресс-код -->
-<section class="section dresscode-section">
-    <div class="dresscode-wrapper">
-        
-        <!-- Заголовок -->
-        <header class="dresscode-header">
-            <h2 class="dresscode-title">ДРЕСС-КОД</h2>
-            <span class="dresscode-subtitle">dress code</span>
-        </header>
-
-        <!-- Текст -->
-        <div class="dresscode-text">
-            <p>
-                Мы будем рады видеть вас в однотонных нарядах спокойных, приглушённых оттенков.<br> <br>
-                Светлые и мягкие цвета - идеальный выбор, но вы можете выбрать абсолютно любой оттенок, который вам нравится: от нежных пастельных до глубоких тёмных.
-            </p>
-            <p class="dresscode-second" style="margin-top: 12px;">
-Пожалуйста, избегайте неоновых и слишком ярких цветов, крупных принтов, полосок и пёстрых сочетаний.
-            </p>
-            <p class="dresscode-second" style="margin-top: 12px;">
-                Для мужчин — костюмы чёрного цвета.
-            </p>
-        </div>
-
-        <!-- Палитра -->
-        <div class="dresscode-palette">
-            <div class="color-dot" style="background-color: #D4C5B0;"></div>
-            <div class="color-dot" style="background-color: #C4A882;"></div>
-            <div class="color-dot" style="background-color: #A8B5C0;"></div>
-            <div class="color-dot" style="background-color: #8A9BA8;"></div>
-            <div class="color-dot" style="background-color: #B8A9C9;"></div>
-            <div class="color-dot" style="background-color: #d2e8c4;"></div>
-            <div class="color-dot" style="background-color: #f5d7d5;"></div>
-        </div>
-
-        <!-- Нижний текст -->
-        <div class="dresscode-note">
-            Палитра — лишь ориентир, а не ограничение
-        </div>
-
-    </div>
-</section>
-
-
-        <!-- СЕКЦИЯ 5: Детали (с блоком о цветочной подписке) -->
-<section class="section details-section">
-    <div class="details-wrapper">
-        
-        <!-- Заголовок -->
-        <header class="details-header">
-            <h2 class="details-title">ДЕТАЛИ</h2>
-            <span class="details-subtitle">details</span>
-        </header>
-
-        <!-- Блок: Подарки -->
-        <div class="details-item">
-            <p class="details-item-text">
-                Дорогие гости, приносите с собой веселье и радость в душе, а подарки — в конверте!
-            </p>
-        </div>
-
-        <!-- Блок: Цветы (НОВЫЙ) -->
-        <div class="details-item">
-            <p class="details-item-text">
-                Возможно вы хотели порадовать нас цветами в день торжества? 
-                <br> 
-                Будем благодарны, если вместо букета вы присоединитесь к нашей цветочной подписке.
-            </p>
-        </div>
-
-        <!-- КНОПКА ДЛЯ ПОДПИСКИ -->
-        <div class="details-item" style="margin-bottom: 25px;">
-            <a href="https://www.tinkoff.ru/rm/r_MFfSBuWqcQ.CtBKfFPzgt/6hUx856521" target="_blank" class="details-subscribe-btn">
+            <!-- КНОПКА - ОТКРЫВАЕТ PDF НА ГУГЛ ДИСКЕ -->
+            <a href="https://drive.google.com/file/d/10v4RSJUxPKHuEjIIFfqPX8vWM2kekNYC/view?usp=sharing" 
+               class="wishes-button" 
+               target="_blank">
                 Перейти к подписке
             </a>
+
+            <!-- Информация о контактах -->
+            <div class="children-info">
+                <p class="children-text">
+                    Контакты для связи: <br> мама невесты - Татьяна: <br> +7 (920) 697-12-92
+                </p>
+            </div>
         </div>
-
-        <p class="details-item-text">
-            Так цветы будут радовать нас не только в день свадьбы, но и после — каждую неделю, напоминая о вас и этом прекрасном дне.
-            <br>
-            Спасибо, что помогаете нам сохранить эти воспоминания живыми. <br> <br> 
-        </p>
-
-        <!-- Блок: Дети -->
-        <div class="details-item">
-            <p class="details-item-text">
-                К сожалению, в ресторане нет детских зон и возможности пригласить аниматоров, поэтому просим заранее подумать, с кем оставить вашу кроху на праздничный вечер.
-            </p>
-        </div>
-
-        <!-- Блок: Контакты организатора -->
-        <div class="details-item">
-            <p class="details-item-text">
-                По всем вопросам пишите нашему организатору: <br> Аделия +7 (917) 409-32-89 <br> (Telegram, WhatsApp)
-            </p>
-        </div>
-
-        <!-- Фотография с белой рамкой -->
-        <div class="details-photo-wrapper">
-            <img src="details.jpg" alt="Детали" class="details-photo">
-        </div>
-
-        <!-- Подпись (рукописная) -->
-        <div class="details-signature">Т&Н</div>
-
     </div>
 </section>
 
-
-           <!-- СЕКЦИЯ 6: Завершение (Анкета + Футер) -->
-<!-- СЕКЦИЯ 6: Завершение (Анкета + Футер) -->
-<section class="section final-section">
-    <div class="final-wrapper">
-        
-        <!-- ====== АНКЕТА ====== -->
-        <header class="final-header">
-            <h2 class="final-title">АНКЕТА ГОСТЯ</h2>
-        </header>
-
-        <div class="final-date-note">
-            мы ждем от вас ответ до 1 сентября 2026
-        </div>
-
-        <form class="final-form" onsubmit="event.preventDefault(); alert('Форма отправлена! (Здесь нужно подключить бэкенд)');">
+    <!-- Секция таймера -->
+    <section class="timer-section">
+        <div class="container">
+            <h2 class="section-title timer-title">Наша встреча через...</h2>
             
-            <!-- Имя -->
-            <div class="final-field">
-                <label for="guestName" class="final-label">Ваше имя и фамилия</label>
-                <input type="text" id="guestName" class="final-input" placeholder="Например, Иван Иванов" required>
-            </div>
-
-            <!-- Присутствие -->
-            <div class="final-field">
-                <div class="final-question">Вы сможете присутствовать?</div>
-                
-                <div class="final-radio-group">
-                    <label class="final-radio-label">
-                        <input type="radio" name="attendance" value="yes" required>
-                        <span class="final-radio-custom"></span>
-                        Да, с удовольствием приду
-                    </label>
-                    
-                    <label class="final-radio-label">
-                        <input type="radio" name="attendance" value="no">
-                        <span class="final-radio-custom"></span>
-                        К сожалению, не смогу
-                    </label>
+            <div class="timer-container">
+                <div class="timer-block">
+                    <span class="timer-number" id="days">00</span>
+                    <span class="timer-label">дни</span>
+                </div>
+                <div class="timer-separator">:</div>
+                <div class="timer-block">
+                    <span class="timer-number" id="hours">00</span>
+                    <span class="timer-label">часы</span>
+                </div>
+                <div class="timer-separator">:</div>
+                <div class="timer-block">
+                    <span class="timer-number" id="minutes">00</span>
+                    <span class="timer-label">минуты</span>
+                </div>
+                <div class="timer-separator">:</div>
+                <div class="timer-block">
+                    <span class="timer-number" id="seconds">00</span>
+                    <span class="timer-label">секунды</span>
                 </div>
             </div>
-
-            <!-- ====== НОВЫЕ ПОЛЯ ====== -->
-
-            <!-- Предпочтения по еде -->
-            <div class="final-field">
-                <div class="final-question">Предпочтения по еде</div>
-                
-                <div class="final-radio-group final-radio-grid">
-                    <label class="final-radio-label">
-                        <input type="radio" name="food" value="fish">
-                        <span class="final-radio-custom"></span>
-                        Рыба
-                    </label>
-                    
-                    <label class="final-radio-label">
-                        <input type="radio" name="food" value="meat">
-                        <span class="final-radio-custom"></span>
-                        Мясо
-                    </label>
-                    
-                    <label class="final-radio-label">
-                        <input type="radio" name="food" value="vegetarian">
-                        <span class="final-radio-custom"></span>
-                        Вегетарианец
-                    </label>
-                </div>
-            </div>
-
-            <!-- Алкоголь (ЧЕКБОКСЫ - можно выбрать несколько) -->
-<div class="final-field">
-    <div class="final-question">Что предпочитаете из напитков?</div>
-    
-    <div class="final-checkbox-group">
-        <label class="final-checkbox-label">
-            <input type="checkbox" name="drinks" value="red_wine">
-            <span class="final-checkbox-custom"></span>
-            Красное вино
-        </label>
-        
-        <label class="final-checkbox-label">
-            <input type="checkbox" name="drinks" value="white_wine">
-            <span class="final-checkbox-custom"></span>
-            Белое вино
-        </label>
-        
-        <label class="final-checkbox-label">
-            <input type="checkbox" name="drinks" value="vodka">
-            <span class="final-checkbox-custom"></span>
-            Водка
-        </label>
-        
-        <label class="final-checkbox-label">
-            <input type="checkbox" name="drinks" value="cognac">
-            <span class="final-checkbox-custom"></span>
-            Коньяк
-        </label>
-        
-        <label class="final-checkbox-label">
-            <input type="checkbox" name="drinks" value="champagne">
-            <span class="final-checkbox-custom"></span>
-            Шампанское
-        </label>
-        
-        <label class="final-checkbox-label">
-            <input type="checkbox" name="drinks" value="non_alcoholic">
-            <span class="final-checkbox-custom"></span>
-            Безалкогольные
-        </label>
-    </div>
-</div>
-
-            <!-- Аллергии -->
-            <div class="final-field">
-                <label for="allergies" class="final-label">Аллергии или особенности питания</label>
-                <input type="text" id="allergies" class="final-input" placeholder="Например: орехи...">
-            </div>
-
-            <!-- ====== КНОПКА ====== -->
-
-            <button type="submit" class="final-btn">ОТПРАВИТЬ ОТВЕТ</button>
-        </form>
-
-        <!-- ====== Разделитель ====== -->
-        <div class="final-divider"></div>
-
-        <!-- ====== ФУТЕР ====== -->
-        <div class="final-footer-content">
-            
-            <div class="final-polaroid">
-                <div class="final-polaroid-inner">
-                    <img src="footer.jpg" alt="Свадьба" class="final-photo">
-                </div>
-            </div>
-
-            <div class="final-timer">
-                <div class="final-timer-title">До нашей свадьбы осталось</div>
-                <div class="final-timer-grid">
-                    <div class="final-timer-block">
-                        <span class="final-timer-number" id="days">00</span>
-                        <span class="final-timer-label">Дней</span>
-                    </div>
-                    <div class="final-timer-block">
-                        <span class="final-timer-number" id="hours">00</span>
-                        <span class="final-timer-label">Часов</span>
-                    </div>
-                    <div class="final-timer-block">
-                        <span class="final-timer-number" id="minutes">00</span>
-                        <span class="final-timer-label">Минут</span>
-                    </div>
-                    <div class="final-timer-block">
-                        <span class="final-timer-number" id="seconds">00</span>
-                        <span class="final-timer-label">Секунд</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="final-copy">
-                &copy; 2026 &bull; Тимур &amp; Наталья
-            </div>
-
         </div>
+    </section>
 
-    </div>
-</section>
+    <!-- Футер -->
+    <footer class="wedding-footer">
+        <div class="footer-photo">
+            <img src="footer2.JPG" alt="Даниил и Алина" class="footer-image">
+        </div>
+        
+        <div class="footer-content">
+            <div class="container">
+                <p class="footer-waiting">С нетерпением ждем Вас!</p>
+                <p class="footer-names">Станислав и Виолетта</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
+
+
+
+
+
