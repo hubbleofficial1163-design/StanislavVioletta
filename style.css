@@ -1,0 +1,2072 @@
+/* style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: #2c2c2c;
+    font-family: 'Caveat', 'Comfortaa', cursive;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    height: -webkit-fill-available;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% center;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.15);
+    z-index: 2;
+}
+
+.hero-names {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: white;
+    font-weight: 300;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+    width: 100%;
+    padding: 0 15px;
+    margin-top: -30vh;
+}
+
+.hero-names h1 {
+    font-family: 'Tangerine', 'Great Vibes', cursive;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: none;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3), 0 0 10px rgba(255,255,255,0.5);
+    font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: blanchedalmond;
+    font-size: clamp(3.5rem, 15vw, 7rem);
+    line-height: 1.1;
+}
+
+.amp {
+    font-size: 0.8em;
+    opacity: 0.9;
+    font-weight: 300;
+    font-family: 'Caveat', cursive;
+}
+
+.ticker-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    background-color: #595b4e;
+    overflow: hidden;
+    padding: 10px 0;
+}
+
+.ticker-content {
+    display: inline-block;
+    white-space: nowrap;
+    color: white;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 300;
+    padding-left: 100%;
+    animation: ticker 15s linear infinite;
+    font-family: 'Caveat', cursive;
+}
+
+@keyframes ticker {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Адаптация для очень маленьких экранов */
+@media (max-width: 360px) {
+    .hero-names h1 {
+        font-size: 2.8rem;
+    }
+    
+    .ticker-content {
+        font-size: 14px;
+        padding: 8px 0;
+    }
+}
+
+/* Для устройств с маленькой высотой экрана */
+@media (max-height: 600px) {
+    .hero-names {
+        margin-top: 0;
+    }
+    
+    .hero-names h1 {
+        font-size: clamp(2.5rem, 12vh, 4rem);
+    }
+    
+    .ticker-container {
+        padding: 6px 0;
+    }
+}
+
+/* Для планшетов */
+@media (min-width: 768px) {
+    .hero-names h1 {
+        font-size: 6rem;
+    }
+    
+    .ticker-content {
+        font-size: 20px;
+    }
+}
+
+.invitation-section {
+    min-height: auto;
+    padding: 40px 0 0 0;
+    background-color: #fff;
+    font-family: 'Caveat', 'Comfortaa', cursive;
+}
+
+.container {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-title {
+    font-size: clamp(2.2rem, 7vw, 3.2rem);
+    margin-bottom: 20px;
+    font-weight: 300;
+    color: #333;
+    line-height: 1.2;
+    font-family: 'Tangerine', 'Great Vibes', cursive;
+    letter-spacing: 0.5px;
+}
+
+.capital-d {
+    font-family: 'Tangerine', 'Great Vibes', cursive;
+    font-size: 2.5em;
+    line-height: 0.8;
+    display: inline-block;
+    margin-right: 5px;
+    color: #595b4e;
+    font-weight: 400;
+}
+
+.section-text {
+    font-size: clamp(1.3rem, 5vw, 1.6rem);
+    margin-bottom: 30px;
+    color: #555;
+    line-height: 1.5;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Caveat', cursive;
+    font-weight: 300;
+}
+
+/* Обертка для календаря и линий */
+.calendar-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.calendar-wrapper::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    width: 1px;
+    height: calc(100% - 20px);
+    background-color: #595b4e;
+    opacity: 0.3;
+    transform: translateY(20px);
+}
+
+.calendar-wrapper::after {
+    content: '';
+    position: absolute;
+    right: 30px;
+    top: 0;
+    width: 1px;
+    height: calc(100% - 20px);
+    background-color: #595b4e;
+    opacity: 0.3;
+    transform: translateY(20px);
+}
+
+.calendar {
+    background-color: #f9f9f9;
+    border-radius: 20px;
+    padding: 0;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    max-width: 380px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.calendar-month {
+    font-size: 1.8rem;
+    font-weight: 400;
+    padding: 8px 20px;
+    margin-bottom: 0;
+    color: white;
+    /* text-transform: uppercase; */
+    letter-spacing: 2px;
+    background-color: #595b4e;
+    width: 100%;
+    font-family: 'Tangerine', 'Great Vibes', cursive;
+}
+
+.calendar-content {
+    padding: 20px 20px 25px 20px;
+}
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-bottom: 10px;
+    font-weight: 300;
+    color: #888;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-family: 'Caveat', cursive;
+}
+
+.calendar-dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #333;
+    margin-bottom: 15px;
+    font-family: 'Caveat', cursive;
+}
+
+.calendar-dates span {
+    padding: 8px 0;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.calendar-dates span:nth-child(5) {
+    background-color: #595b4e;
+    color: white;
+    position: relative;
+}
+
+.calendar-heart {
+    font-size: 1.5rem;
+    color: #595b4e;
+    margin-top: 5px;
+    animation: pulse 1.5s ease infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Адаптация для маленьких экранов */
+@media (max-width: 360px) {
+    .calendar-dates span {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+    
+    .calendar-weekdays span {
+        font-size: 0.9rem;
+    }
+    
+    .calendar-wrapper::before {
+        left: 20px;
+    }
+    
+    .calendar-wrapper::after {
+        right: 20px;
+    }
+}
+
+/* Заголовок и текст с боковыми отступами */
+.section-title,
+.section-text {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+/* Фото на всю ширину */
+.full-width-photo {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+}
+
+.couple-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 9/16;
+}
+
+/* Блок локации на всю ширину */
+.location-block.full-width {
+    width: 100%;
+    margin: 0;
+    padding: 40px 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.location-content {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.location-title {
+    font-family: 'Tangerine', 'Great Vibes', cursive;
+    font-size: 2.8rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.location-text {
+    font-family: 'Caveat', cursive;
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    color: #fff;
+    line-height: 1.4;
+}
+
+.map-placeholder {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.map-placeholder iframe {
+    display: block;
+}
+
+.map-note {
+    font-size: 1rem;
+    padding: 8px 0;
+    opacity: 0.9;
+    font-family: 'Caveat', cursive;
+    color: #fff;
+    background: rgba(0,0,0,0.3);
+}
+
+/* Адаптация для очень маленьких экранов */
+@media (max-width: 360px) {
+    .calendar-dates span {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+    }
+    
+    .calendar-weekdays span {
+        font-size: 0.8rem;
+    }
+    
+    .location-title {
+        font-size: 2.2rem;
+    }
+    
+    .location-text {
+        font-size: 1.3rem;
+    }
+}
+
+/* Карта на всю ширину экрана */
+.full-width-map {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+}
+
+.full-width-map iframe {
+    width: 100%;
+    height: 300px;
+    display: block;
+    border: none;
+}
+
+/* Если хотите, чтобы карта примыкала к блоку локации */
+.location-block.full-width {
+    margin-bottom: 0;
+    padding-bottom: 40px;
+}
+
+.full-width-map {
+    margin-top: -5px;
+}
+
+/* Секция программы дня */
+.schedule-section {
+    background-color: #ffffff;
+    padding: 50px 20px;
+    width: 100%;
+    border-bottom: none;
+}
+
+.schedule-section .container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.schedule-title {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+    font-size: 2.8rem;
+    position: relative;
+    font-family: 'Tangerine', 'Great Vibes', cursive;
+    font-weight: 400;
+}
+
+.schedule-timeline {
+    position: relative;
+    padding: 10px 0;
+}
+
+/* Вертикальная черная линия */
+.schedule-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 140px;
+    width: 2px;
+    height: 100%;
+    background-color: #333;
+    z-index: 1;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 30px;
+    min-height: 50px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Левая часть (название события) */
+.timeline-left {
+    width: 100px;
+    text-align: right;
+    padding-right: 15px;
+    position: relative;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.event-name {
+    font-family: 'Caveat', cursive;
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: #333;
+    display: inline-block;
+    position: relative;
+}
+
+/* Горизонтальная линия */
+.timeline-line {
+    width: 40px;
+    height: 1px;
+    background-color: #999;
+    flex-shrink: 0;
+    margin: 0 10px 0 0;
+}
+
+/* Правая часть (время) */
+.timeline-right {
+    flex-grow: 1;
+    text-align: left;
+    padding-left: 25px;
+    box-sizing: border-box;
+}
+
+.event-time {
+    font-family: 'Caveat', cursive;
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: #595b4e;
+    letter-spacing: 0.5px;
+    display: inline-block;
+}
+
+/* Точка на вертикальной линии */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    left: 120px;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    background-color: #595b4e;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+/* Адаптация для маленьких экранов */
+@media (max-width: 400px) {
+    .schedule-timeline::before {
+        left: 110px;
+    }
+    
+    .timeline-left {
+        width: 80px;
+    }
+    
+    .timeline-item::after {
+        left: 110px;
+    }
+    
+    .event-name {
+        font-size: 1.3rem;
+    }
+    
+    .event-time {
+        font-size: 1.3rem;
+    }
+    
+    .timeline-line {
+        width: 30px;
+    }
+    
+    .timeline-right {
+        padding-left: 20px;
+    }
+}
+
+/* Секция дресс-кода */
+.dresscode-section {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 60px 20px;
+    width: 100%;
+    color: white;
+    text-align: center;
+    border-top: none;
+}
+
+.dresscode-section .container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.dresscode-title {
+    color: white;
+    margin-bottom: 30px;
+    font-size: 2.8rem;
+    font-weight: 400;
+}
+
+.dresscode-text {
+    font-family: 'Caveat', cursive;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    font-weight: 300;
+}
+
+.dresscode-palette {
+    width: 80%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Адаптация для маленьких экранов */
+@media (max-width: 400px) {
+    .dresscode-text {
+        font-size: 1.4rem;
+    }
+}
+
+.schedule-section {
+    margin-bottom: 0;
+    padding-bottom: 50px;
+}
+
+.dresscode-section {
+    margin-top: 0;
+    padding-top: 50px;
+    position: relative;
+    background-color: transparent;
+}
+
+.dresscode-section .container {
+    background-color: transparent;
+}
+
+.dresscode-section {
+    margin-top: -1px;
+    position: relative;
+    z-index: 2;
+}
+
+.schedule-section {
+    position: relative;
+    z-index: 1;
+}
+
+.dresscode-section {
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 -5px 10px rgba(255,255,255,0.5);
+}
+
+.dresscode-section {
+    margin-top: -20px;
+    padding-top: 70px;
+}
+
+/* Новые стили для дополнительного контента */
+.inspiration-text {
+    font-family: 'Tangerine', 'Great Vibes', cursive;
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: white;
+    margin: 40px 0 20px 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+}
+
+.inspiration-text::before,
+.inspiration-text::after {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 1px;
+    background-color: white;
+    vertical-align: middle;
+    margin: 0 15px;
+    opacity: 0.6;
+}
+
+.dresscode-inspiration {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Убираем линии на маленьких экранах, если мешают */
+@media (max-width: 400px) {
+    .inspiration-text::before,
+    .inspiration-text::after {
+        width: 15px;
+        margin: 0 8px;
+    }
+    
+    .inspiration-text {
+        font-size: 1.8rem;
+    }
+}
+
+/* Секция анкеты гостя */
+.guest-section {
+    background-color: #ffffff;
+    padding: 60px 15px;
+    width: 100%;
+}
+
+.guest-section .container {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* Карточка с рамкой */
+.guest-card {
+    border: 1px solid #333;
+    border-radius: 24px;
+    padding: 50px 25px;
+    background-color: #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+    width: 100%;
+    max-width: 100%;
+}
+
+.guest-title {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #333;
+    font-size: 2.8rem;
+    position: relative;
+    font-family: 'Tangerine', 'Great Vibes', cursive;
+    font-weight: 400;
+}
+
+.guest-form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 40px;
+}
+
+.form-label {
+    display: block;
+    font-family: 'Caveat', cursive;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Поле ввода в виде линии */
+.form-input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    font-family: 'Caveat', cursive;
+    font-size: 1.4rem;
+    color: #333;
+    background: transparent;
+    outline: none;
+    transition: border-color 0.3s;
+    font-weight: 300;
+}
+
+.form-input:focus {
+    border-bottom-color: #595b4e;
+}
+
+.form-input::placeholder {
+    color: transparent;
+}
+
+/* Радио кнопки В СТОЛБИК */
+.radio-group-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-family: 'Caveat', cursive;
+    font-size: 1.4rem;
+    color: #333;
+    font-weight: 300;
+}
+
+.radio-input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.radio-custom {
+    width: 22px;
+    height: 22px;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    margin-right: 15px;
+    position: relative;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+.radio-input:checked + .radio-custom {
+    border-color: #595b4e;
+}
+
+.radio-input:checked + .radio-custom::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background-color: #595b4e;
+    border-radius: 50%;
+}
+
+.radio-text {
+    color: #555;
+}
+
+/* Чекбоксы (алкоголь) */
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-family: 'Caveat', cursive;
+    font-size: 1.3rem;
+    color: #333;
+    font-weight: 300;
+}
+
+.checkbox-input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.checkbox-custom {
+    width: 22px;
+    height: 22px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    margin-right: 12px;
+    position: relative;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+.checkbox-input:checked + .checkbox-custom {
+    border-color: #595b4e;
+    background-color: #595b4e;
+}
+
+.checkbox-input:checked + .checkbox-custom::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 14px;
+}
+
+.checkbox-text {
+    color: #555;
+    line-height: 1.3;
+}
+
+/* Кнопка отправки */
+.submit-group {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.submit-btn {
+    background-color: #595b4e;
+    border: 1.5px solid #595b4e;
+    color: white;
+    font-family: 'Caveat', cursive;
+    font-size: 1.6rem;
+    font-weight: 300;
+    padding: 15px 50px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.submit-btn:hover {
+    background-color: #333;
+    color: white;
+}
+
+/* Адаптация для маленьких экранов */
+@media (max-width: 500px) {
+    .guest-card {
+        padding: 30px 20px;
+    }
+    
+    .guest-title {
+        font-size: 2.9rem;
+        margin-bottom: 40px;
+    }
+    
+    .form-label {
+        font-size: 1.5rem;
+    }
+    
+    .checkbox-group {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .submit-btn {
+        padding: 12px 40px;
+        font-size: 1.4rem;
+    }
+}
+
+/* Секция пожеланий */
+.wishes-section {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 70px 20px;
+    width: 100%;
+    color: white;
+    position: relative;
+}
+
+/* Убираем белый слой */
+.wishes-section::before {
+    display: none;
+}
+
+.wishes-section .container {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.wishes-title {
+    text-align: center;
+    margin-bottom: 40px;
+    color: white;
+    font-size: 2.8rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-family: 'Tangerine', 'Great Vibes', cursive;
+    font-weight: 400;
+}
+
+.wishes-content {
+    background-color: transparent;
+    padding: 0;
+    backdrop-filter: none;
+}
+
+.wishes-text {
+    font-family: 'Caveat', cursive;
+    font-size: 1.5rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    font-weight: 300;
+}
+
+.wishes-link {
+    display: inline-block;
+    font-family: 'Caveat', cursive;
+    font-size: 1.3rem;
+    color: white;
+    background-color: transparent;
+    padding: 12px 25px;
+    border-radius: 40px;
+    text-decoration: none;
+    word-break: break-all;
+    margin: 15px 0 20px;
+    border: 1px solid white;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    font-weight: 300;
+}
+
+.wishes-link:hover {
+    background-color: white;
+    color: #595b4e;
+    border-color: white;
+}
+
+.children-info {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 2px solid white;
+}
+
+.children-text {
+    font-family: 'Caveat', cursive;
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    background-color: transparent;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Адаптация для маленьких экранов */
+@media (max-width: 500px) {
+    .wishes-section {
+        padding: 50px 15px;
+    }
+    
+    .wishes-title {
+        font-size: 2.8rem;
+    }
+    
+    .wishes-text {
+        font-size: 1.3rem;
+    }
+    
+    .children-text {
+        font-size: 1.4rem;
+    }
+}
+
+/* НАЛОЖЕНИЕ ДЛЯ ПОСЛЕДНЕЙ И ПРЕДПОСЛЕДНЕЙ СЕКЦИЙ */
+
+/* Предпоследняя секция (анкета) */
+.guest-section {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0;
+    padding-bottom: 60px;
+    background-color: #ffffff;
+}
+
+/* Последняя секция (пожелания с фоном) */
+.wishes-section {
+    margin-top: -20px;
+    padding-top: 80px;
+    position: relative;
+    z-index: 2;
+    background-color: transparent;
+    box-shadow: 0 -5px 15px rgba(255,255,255,0.7);
+}
+
+/* Убираем возможные белые фоны у контейнеров */
+.guest-section .container,
+.wishes-section .container {
+    background-color: transparent;
+}
+
+/* Если нужно более сильное наложение */
+.wishes-section {
+    margin-top: -30px;
+    padding-top: 90px;
+}
+
+/* Если нужно более слабое наложение */
+.wishes-section {
+    margin-top: -10px;
+    padding-top: 70px;
+}
+
+/* Кнопка вместо ссылки */
+.wishes-button {
+    display: inline-block;
+    font-family: 'Caveat', cursive;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: white;
+    background-color: transparent;
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    margin: 20px 0 25px;
+    border: 2px solid white;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.wishes-button:hover {
+    background-color: white;
+    color: #595b4e;
+    border-color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.wishes-button:active {
+    transform: translateY(0);
+}
+
+/* Секция таймера */
+.timer-section {
+    background-color: #ffffff;
+    padding: 70px 20px;
+    width: 100%;
+}
+
+.timer-section .container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.timer-title {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+    font-size: 2.8rem;
+    font-family: 'Tangerine', 'Great Vibes', cursive;
+    font-weight: 400;
+}
+
+.timer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.timer-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 70px;
+}
+
+.timer-number {
+    font-family: 'Caveat', cursive;
+    font-size: 4rem;
+    font-weight: 300;
+    color: #595b4e;
+    line-height: 1.2;
+}
+
+.timer-label {
+    font-family: 'Caveat', cursive;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: #888;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+.timer-separator {
+    font-family: 'Caveat', cursive;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: #595b4e;
+    margin: 0 5px;
+    line-height: 1;
+}
+
+/* Адаптация для маленьких экранов */
+@media (max-width: 500px) {
+    .timer-section {
+        padding: 50px 15px;
+    }
+    
+    .timer-title {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+    }
+    
+    .timer-number {
+        font-size: 3rem;
+    }
+    
+    .timer-label {
+        font-size: 1.1rem;
+    }
+    
+    .timer-separator {
+        font-size: 2.8rem;
+        margin: 0 2px;
+    }
+    
+    .timer-block {
+        min-width: 50px;
+    }
+}
+
+@media (max-width: 350px) {
+    .timer-number {
+        font-size: 2.5rem;
+    }
+    
+    .timer-label {
+        font-size: 1rem;
+    }
+    
+    .timer-separator {
+        font-size: 2.2rem;
+    }
+}
+
+/* Футер */
+.wedding-footer {
+    background-color: #595b4e;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Фото во всю ширину со скругленными верхними углами */
+.footer-photo {
+    width: 100%;
+    line-height: 0;
+    background-color: #ffffff;
+    padding-top: 10px;
+    object-position: 30% center;
+}
+
+.footer-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    aspect-ratio: 9/16;
+    object-position: 30% center;
+}
+
+/* Контент футера */
+.footer-content {
+    padding: 60px 20px 80px 20px;
+    width: 100%;
+    text-align: center;
+    background-color: #595b4e;
+}
+
+.footer-waiting {
+    font-family: 'Caveat', cursive;
+    font-size: 2.2rem;
+    color: white;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.footer-names {
+    font-family: 'Caveat', cursive;
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 300;
+}
+
+/* Адаптация для маленьких экранов */
+@media (max-width: 500px) {
+    .footer-content {
+        padding: 50px 15px 70px 15px;
+    }
+    
+    .footer-waiting {
+        font-size: 2rem;
+    }
+    
+    .footer-names {
+        font-size: 1.5rem;
+    }
+    
+    .footer-image {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+}
+
+/* Telegram раздел */
+.telegram-group {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #000000;
+}
+
+.telegram-text {
+    font-family: 'Caveat', cursive;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    color: #666;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.telegram-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #595b4e;
+    color: white;
+    font-family: 'Caveat', cursive;
+    font-size: 1.3rem;
+    font-weight: 300;
+    padding: 12px 25px;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: #595b4e
+}
+
+.telegram-button:hover {
+    background-color: #b6b6b4;
+    transform: translateY(-2px);
+    box-shadow: #595b4e
+}
+
+.telegram-button:active {
+    transform: translateY(0);
+}
+
+.telegram-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Адаптация для маленьких экранов */
+@media (max-width: 400px) {
+    .telegram-button {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 1.2rem;
+    }
+    
+    .telegram-text {
+        font-size: 1.2rem;
+    }
+}
+
+.dresscode-gallery .gallery-slide img {
+    transform: translateY(10px); /* Сдвигаем фото на 10px вниз */
+    /* Или используйте margin-top: 10px; если transform не подходит */
+}
+/* Галерея для дресс-кода с двумя стрелками */
+.dresscode-gallery {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.gallery-track {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-slide {
+    flex: 0 0 100%;
+    width: 100%;
+}
+
+.gallery-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.3); /* Полупрозрачный белый */
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+    backdrop-filter: blur(2px); /* Легкое размытие фона */
+}
+
+.gallery-btn:hover {
+    background-color: rgba(255, 255, 255, 0.6); /* Чуть менее прозрачный при наведении */
+    transform: translateY(-50%) scale(1.1);
+}
+
+.gallery-btn:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.gallery-btn.prev {
+    left: 10px;
+}
+
+.gallery-btn.next {
+    right: 10px;
+}
+
+.gallery-btn svg {
+    width: 24px;
+    height: 24px;
+    fill: rgba(89, 91, 78, 0.8); /* Полупрозрачный темно-зеленый */
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 500px) {
+    .gallery-btn {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .gallery-btn.prev {
+        left: 8px;
+    }
+    
+    .gallery-btn.next {
+        right: 8px;
+    }
+    
+    .gallery-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 350px) {
+    .gallery-btn {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .gallery-btn.prev {
+        left: 5px;
+    }
+    
+    .gallery-btn.next {
+        right: 5px;
+    }
+    
+    .gallery-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* Убираем синее выделение при нажатии на мобильных устройствах */
+* {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Разрешаем выделение текста в инпутах и текстовых полях */
+input, 
+textarea, 
+.form-input,
+[contenteditable="true"] {
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+/* Специфические стили для кнопок */
+button,
+.submit-btn,
+.telegram-button,
+.wishes-button,
+.timeline-item,
+.radio-label,
+.checkbox-label,
+[role="button"] {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Убираем серый фон при нажатии на мобильных */
+button:focus,
+.submit-btn:focus,
+.telegram-button:focus,
+.wishes-button:focus,
+.timeline-item:focus,
+.radio-label:focus,
+.checkbox-label:focus {
+    outline: none;
+}
+
+/* Для ссылок */
+a {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+}
+
+/* Для элементов с курсором pointer */
+[onclick],
+[role="button"],
+.pointer {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Дополнительная защита от выделения для всех кликабельных элементов */
+.clickable,
+button,
+.btn,
+[type="button"],
+[type="submit"],
+[type="reset"] {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Убираем стандартное выделение при тапе в Safari */
+@media screen and (-webkit-min-device-pixel-ratio: 0) { 
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+}
+
+/* Для Firefox на Android */
+@media (-moz-touch-enabled: 1), (pointer: coarse) {
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+}
+
+/* Специфично для radio и checkbox */
+.radio-label:active,
+.checkbox-label:active,
+.radio-label:focus,
+.checkbox-label:focus {
+    background-color: transparent;
+    outline: none;
+}
+
+.radio-custom:active,
+.checkbox-custom:active {
+    background-color: transparent;
+}
+
+/* Убираем стандартное выделение в Internet Explorer / Edge */
+::-ms-clear {
+    display: none;
+}
+
+::-ms-reveal {
+    display: none;
+}
+
+::-ms-expand {
+    display: none;
+}
+
+
+
+/* МЯГКОЕ УДАЛЕНИЕ ГРАНИЦ (СОХРАНЯЕТ ВИЗУАЛЬНЫЕ ОТСТУПЫ) */
+
+/* Убираем только явные границы и тени */
+.invitation-section,
+.schedule-section,
+.dresscode-section,
+.guest-section,
+.wishes-section,
+.timer-section,
+.wedding-footer {
+    border: none;
+    border-top: none;
+    border-bottom: none;
+    box-shadow: none;
+}
+
+/* Убираем специальные наложения */
+.dresscode-section,
+.guest-section,
+.wishes-section {
+    margin-top: 0;
+    box-shadow: none;
+}
+
+.dresscode-section::before,
+.dresscode-section::after,
+.wishes-section::before,
+.wishes-section::after {
+    display: none;
+}
+
+/* Сохраняем внутренние отступы, но убираем внешние */
+section, footer {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+/* ===== МОДАЛЬНОЕ ОКНО С PDF ===== */
+.pdf-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    animation: pdfFadeIn 0.3s ease;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+@keyframes pdfFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.pdf-modal-content {
+    position: relative;
+    background-color: #ffffff;
+    margin: 30px auto;
+    padding: 0;
+    width: 92%;
+    max-width: 800px;
+    height: 85vh;
+    max-height: 700px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Шапка модального окна */
+.pdf-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    background-color: #595b4e;
+    flex-shrink: 0;
+}
+
+.pdf-modal-title {
+    font-family: 'Tangerine', 'Great Vibes', cursive;
+    font-size: 2rem;
+    font-weight: 400;
+    color: white;
+    margin: 0;
+}
+
+.pdf-modal-close {
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s;
+    line-height: 1;
+    padding: 0 8px;
+}
+
+.pdf-modal-close:hover {
+    transform: rotate(90deg);
+}
+
+/* Контейнер для PDF */
+.pdf-embed-wrapper {
+    flex: 1;
+    width: 100%;
+    background: #f5f5f5;
+    overflow: auto; /* ← было overflow: hidden */
+    position: relative;
+}
+
+.pdf-embed-wrapper embed {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 500px; /* Добавляем минимальную высоту для скролла */
+    border: none;
+}
+
+/* Футер модального окна */
+.pdf-modal-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 25px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #eee;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+}
+
+.pdf-download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Caveat', cursive;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #595b4e;
+    background-color: transparent;
+    padding: 10px 25px;
+    border-radius: 40px;
+    text-decoration: none;
+    border: 1.5px solid #595b4e;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.pdf-download-btn:hover {
+    background-color: #595b4e;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.pdf-close-btn {
+    font-family: 'Caveat', cursive;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: white;
+    background-color: #999;
+    padding: 10px 30px;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pdf-close-btn:hover {
+    background-color: #666;
+}
+
+.pdf-icon {
+    flex-shrink: 0;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 600px) {
+    .pdf-modal-content {
+        margin: 10px auto;
+        width: 96%;
+        height: 90vh;
+        max-height: 90vh;
+        border-radius: 16px;
+    }
+    
+    .pdf-modal-header {
+        padding: 12px 18px;
+    }
+    
+    .pdf-modal-title {
+        font-size: 1.6rem;
+    }
+    
+    .pdf-modal-close {
+        font-size: 1.8rem;
+    }
+    
+    .pdf-modal-footer {
+        padding: 12px 15px;
+        gap: 10px;
+    }
+    
+    .pdf-download-btn,
+    .pdf-close-btn {
+        font-size: 1rem;
+        padding: 8px 18px;
+    }
+}
+
+@media (max-width: 400px) {
+    .pdf-modal-content {
+        margin: 5px auto;
+        width: 98%;
+        height: 95vh;
+        border-radius: 12px;
+    }
+    
+    .pdf-modal-header {
+        padding: 10px 14px;
+    }
+    
+    .pdf-modal-title {
+        font-size: 1.3rem;
+    }
+    
+    .pdf-modal-footer {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .pdf-download-btn,
+    .pdf-close-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 10px;
+        font-size: 1.1rem;
+    }
+}
+
+/* Чтобы кнопка выглядела как кнопка, а не ссылка */
+.wishes-button {
+    display: inline-block;
+    font-family: 'Caveat', cursive;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: white;
+    background-color: transparent;
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    margin: 20px 0 25px;
+    border: 2px solid white;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.wishes-button:hover {
+    background-color: white;
+    color: #595b4e;
+    border-color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+.pdf-embed-wrapper {
+    flex: 1;
+    width: 100%;
+    background: #f5f5f5;
+    overflow: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    position: relative;
+    min-height: 500px;
+    max-height: calc(85vh - 120px);
+}
+
+#pdfContainer {
+    width: 100%;
+    min-height: 600px;
+    background: white;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#pdfContainer canvas {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.pdf-embed-wrapper::-webkit-scrollbar {
+    width: 8px;
+}
+
+.pdf-embed-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.pdf-embed-wrapper::-webkit-scrollbar-thumb {
+    background: #595b4e;
+    border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+    .pdf-embed-wrapper {
+        min-height: 400px;
+        max-height: calc(85vh - 100px);
+    }
+    #pdfContainer {
+        min-height: 450px;
+        padding: 10px;
+    }
+}
+
+
+/* ===== КНОПКА МУЗЫКИ ===== */
+.music-btn {
+    position: absolute;
+    bottom: 180px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50px;
+    padding: 16px 32px;
+    color: white;
+    font-family: 'Caveat', cursive;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.music-btn:hover {
+    background: rgba(255, 255, 255, 0.35);
+    transform: translateX(-50%) scale(1.05);
+    box-shadow: 0 6px 35px rgba(0, 0, 0, 0.4);
+}
+
+.music-btn:active {
+    transform: translateX(-50%) scale(0.95);
+}
+
+.music-btn .music-icon {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    transition: transform 0.3s ease;
+}
+
+/* Анимация вращения когда музыка играет */
+.music-btn.playing .music-icon {
+    animation: spinMusic 2s linear infinite;
+}
+
+@keyframes spinMusic {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.music-btn #musicStatus {
+    font-size: 1.3rem;
+    white-space: nowrap;
+    font-weight: 400;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 600px) {
+    .music-btn {
+        bottom: 160px;
+        padding: 14px 26px;
+        font-size: 1.3rem;
+        gap: 10px;
+    }
+    
+    .music-btn #musicStatus {
+        font-size: 1.1rem;
+    }
+    
+    .music-btn .music-icon {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+@media (max-width: 400px) {
+    .music-btn {
+        bottom: 140px;
+        padding: 12px 20px;
+        font-size: 1.1rem;
+        gap: 8px;
+    }
+    
+    .music-btn #musicStatus {
+        font-size: 1rem;
+    }
+    
+    .music-btn .music-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
